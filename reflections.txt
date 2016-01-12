@@ -1,0 +1,6 @@
+1. About three hours
+2. Seperating and getting very clear the differences between class and instance methods 
+3. Extra features
+- Increased transactions to include volume bought and price (seems like this is usefull to run a business)
+- Return list of transactions by either product or customer (would need this for reporting and analysis)
+4. Practice, practice, practise

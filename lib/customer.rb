@@ -8,11 +8,11 @@ class Customer
     add_customer
   end
 
-  def purchase(product)
-    unless product.in_stock?
-      fail OutOfStockError, "'" + product.title + "' is out of stock"
+  def purchase(product, volume, price)
+    unless product.stock >= volume
+      fail OutOfStockError, "'" + product.title + "' insufficient stock"
     end
-    Transaction.new(self, product)
+    Transaction.new(self, product, volume, price)
   end
 
   def self.all
