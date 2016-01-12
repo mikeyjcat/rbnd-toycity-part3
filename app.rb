@@ -67,5 +67,9 @@ puts transaction2.price == 46 # Should return true
 # walter.purchase(firehouse, 1, 45)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
 
-puts Transaction.by_customer(walter)
-puts Transaction.by_product(nanoblock)
+puts Transaction.by_customer(walter) # Should return two transactions
+
+julia = Customer.find_by_name('Julia Van Cleve')
+julia.purchase(nanoblock, 1, 46)
+
+puts Transaction.by_product(nanoblock) # Should return three transactions

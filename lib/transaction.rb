@@ -24,11 +24,11 @@ class Transaction
   end
 
   def self.by_customer(customer)
-    @@transactions.select{ |t| t.customer == customer }
+    @@transactions.select { |t| t.customer == customer }
   end
 
   def self.by_product(product)
-    @@transactions.select{ |t| t.product == product }
+    @@transactions.select { |t| t.product == product }
   end
 
   private
