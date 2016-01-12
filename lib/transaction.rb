@@ -1,3 +1,4 @@
+# Maintains the list of transactions, and transaction behavior
 class Transaction
   attr_reader :id, :customer, :product
   @@transactions = []
@@ -17,7 +18,7 @@ class Transaction
   end
 
   def self.find(id)
-    @@transactions.find { |transaction| transaction.id == id }
+    @@transactions.find { |t| t.id == id }
   end
 
   private

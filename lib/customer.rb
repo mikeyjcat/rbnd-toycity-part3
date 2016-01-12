@@ -1,3 +1,4 @@
+# Maintains list of customers, and defines thier behavior
 class Customer
   attr_reader :name
   @@customers = []
@@ -19,7 +20,7 @@ class Customer
   end
 
   def self.find_by_name(name)
-    @@customers.find { |customer| customer.name == name }
+    @@customers.find { |c| c.name == name }
   end
 
   private

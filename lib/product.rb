@@ -1,3 +1,4 @@
+# Maintains list of products, thier stock and behavior
 class Product
   attr_reader :title, :price
   attr_accessor :stock
@@ -15,7 +16,7 @@ class Product
   end
 
   def self.find_by_title(title)
-    @@products.find { |product| product.title == title }
+    @@products.find { |p| p.title == title }
   end
 
   def in_stock?
