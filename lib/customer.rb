@@ -7,6 +7,13 @@ class Customer
     add_customer
   end
 
+  def purchase(product)
+    unless product.in_stock?
+      fail OutOfStockError, "'" + product.title + "' is out of stock"
+    end
+    Transaction.new(self, product)
+  end
+
   def self.all
     @@customers
   end
