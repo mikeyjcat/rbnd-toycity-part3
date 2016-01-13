@@ -23,12 +23,20 @@ class Transaction
     @@transactions.find { |t| t.id == id }
   end
 
+  # Returns number of transactions for a client
   def self.by_customer(customer)
-    @@transactions.select { |t| t.customer == customer }
+    @@transactions.count { |t| t.customer == customer }
   end
 
+  # Returns the number of an items sold, and the average price
   def self.by_product(product)
-    @@transactions.select { |t| t.product == product }
+    number_sold = 0
+    value_sold = 0.0
+    @@transactions.select { |t| t.product == product }.each do |t|
+      number_sold += t.volume
+      value_sold += t.volume * t.price
+    end
+    { volume: number_sold, average_price: value_sold / number_sold }
   end
 
   private

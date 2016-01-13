@@ -2,5 +2,5 @@
 2. Seperating and getting very clear the differences between class and instance methods 
 3. Extra features
 - Increased transactions to include volume bought and price (seems like this is usefull to run a business)
-- Return list of transactions by either product or customer (would need this for reporting and analysis)
+- Return count of transactions for a client client, as well the  volume and average price of all transactions for a product (would need this for reporting and analysis)
 4. Practice, practice, practise

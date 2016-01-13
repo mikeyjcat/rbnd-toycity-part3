@@ -55,7 +55,7 @@ puts nanoblock.stock # Should return 9
 
 # PURCHASES
 
-walter.purchase(nanoblock, 2, 46)
+walter.purchase(nanoblock, 2, 30)
 
 puts Transaction.all.count # Should return 2
 
@@ -67,9 +67,9 @@ puts transaction2.price == 46 # Should return true
 # walter.purchase(firehouse, 1, 45)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
 
-puts Transaction.by_customer(walter) # Should return two transactions
+puts Transaction.by_customer(walter) # Should return 2
 
 julia = Customer.find_by_name('Julia Van Cleve')
-julia.purchase(nanoblock, 1, 46)
+julia.purchase(nanoblock, 2, 30)
 
-puts Transaction.by_product(nanoblock) # Should return three transactions
+puts Transaction.by_product(nanoblock) # { 2, 111 }
